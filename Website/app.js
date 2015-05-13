@@ -1,43 +1,39 @@
-﻿
-/*
- * Module dependencies
- */
-var express = require('express')
-  , stylus = require('stylus')
-  , nib = require('nib')
-  , vash = require('vash');
-
-//var tpl = vash.compile('<p>I am a @model.t!</p>');
+﻿var express = require('express');
+var routes = require('./routes/index');
+var http = require('http');
+var path = require('path');
 
 var app = express();
 
-function compile(str, path) {
-	return stylus(str)
-	  .set('filename', path)
-	  .use(nib())
-}
+// all environments
+app.set('port', process.env.PORT || 3000);
+app.set('views', path.join(__dirname, 'views'));
 
-app.set('views', __dirname + '/views');
 //app.set('view engine', 'jade');
 app.set('view engine', 'vash');
+app.use(express.favicon());
 app.use(express.logger('dev'));
-app.use(stylus.middleware(
-  {
-  	src: __dirname + '/public'
-  , compile: compile
-  }
-));
-app.use(express.static(__dirname + '/public'));
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(express.methodOverride());
+app.use(app.router);
 
+var stylus = require('stylus');
+app.use(stylus.middleware(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
-//app.get('/', function (req, res) {
-//	res.end('Hi there!')
-//});
+// development only
+if ('development' == app.get('env')) {
+    app.use(express.errorHandler());
+}
 
-app.get('/', function (req, res) {
-	res.render(
-		'index',
-		{ title: 'Home' });
+app.get('/', routes.index);
+app.get('/about', routes.about);
+app.get('/contact', routes.contact);
+
+app.use(express.logger('dev'));
+
+http.createServer(app).listen(app.get('port'), function () {
+    console.log('Express server listening on port ' + app.get('port'));
 });
-
-app.listen(3000);
+//# sourceMappingURL=app.js.map

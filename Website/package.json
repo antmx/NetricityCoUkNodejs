@@ -1,11 +1,17 @@
-﻿{
-    "name": "NetricityCoUk",
+{
+    "name": "NetricityWebsite",
     "version": "0.0.1",
-    "private": "true",
+    "description": "Website for Netricity.co.uk, written in Node.js and Express",
+    "main": "app.js",
+    "author": {
+        "name": "Anthony",
+        "email": "anthony@netricity.co.uk"
+    },
     "dependencies": {
-        "express": "3.0.0alpha4",
+        "express": "3.4.4",
+        /*"jade": "*",
+        "stylus": "*",*/
         "vash": "*",
-        "stylus": "*",
-        "nib": "*"
+        "jquery": "*"
     }
 }

@@ -1,0 +1,5 @@
+﻿
+/* Override main menu */
+.navbar-fixed-top, .navbar-fixed-bottom {
+	border-bottom-width: 0;
+}

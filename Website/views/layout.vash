@@ -1,16 +1,54 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>@model.title</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" type="text/css" media="screen" charset="utf-8">
-		<link rel="stylesheet" href="stylesheets/style.css" type="text/css" media="screen" charset="utf-8">
-	</head>
-	<body>		
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@model.title - Netricity.co.uk</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/dropit.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+	<script src="/javascripts/modernizr-2.6.2.js"></script>
+	<!--<script src="/javascripts/jquery-2.1.4.min.js"></script>-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="/javascripts/dropit.js"></script>
+</head>
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+				<a href="/" class="navbar-brand">Netricity</a>
+			</div>
+			<div class="navbar-collapse collapse menu">
+				<ul class="nav navbar-nav">
+					<li><a href="/">Home</a></li>
+					<li><a href="/about">About</a>
+						<ul>
+							<li><a href="foo">Foo</a></li>
+							<li><a href="bar">Bar</a></li>
+						</ul>
+					</li>
+					<li><a href="/contact">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="container body-content">
 		@html.block('content')
 
+		<hr />
 		<footer>
-			@html.block('footer')	
+			<p>&copy; @(new Date().getFullYear()) - Netricity Ltd</p>
 		</footer>
-	</body>
+	</div>
+
+	<script src="/javascripts/bootstrap.js"></script>
+	<script src="/javascripts/respond.js"></script>
+
+	<script>
+		$(document).ready(function () {
+			$('.navbar-nav').dropit({ action: 'mouseenter' });
+		});
+	</script>
+</body>
 </html>

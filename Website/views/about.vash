@@ -1,0 +1,8 @@
+
+@html.extend('layout', function(model){
+    @html.block('content', function(model){
+        <h2>@model.title.</h2>
+        <h3>message</h3>
+        <p>Use this area to provide additional information.</p>
+    })
+})

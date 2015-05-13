@@ -1,0 +1,9 @@
+﻿body {
+  margin: 0;
+}
+/* Override main menu */
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  border-bottom-width: 0;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,1 +1,0 @@
-﻿contains static served files
