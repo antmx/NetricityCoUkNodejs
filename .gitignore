@@ -1,3 +1,4 @@
 # git ignore file
 /Munter
 /Website/public/LinkSpector
+/Website/.ntvs_analysis.dat.tmp
