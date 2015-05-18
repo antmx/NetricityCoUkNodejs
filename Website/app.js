@@ -2,6 +2,7 @@
 var routes = require('./routes/index');
 var http = require('http');
 var path = require('path');
+var cors = require('./custommodules/cors');
 
 var app = express();
 
@@ -32,6 +33,9 @@ app.get('/about', routes.about);
 app.get('/contact', routes.contact);
 
 app.use(express.logger('dev'));
+
+app.enable('cors');
+app.use(cors.init);
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));

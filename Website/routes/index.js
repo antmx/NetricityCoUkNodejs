@@ -1,5 +1,7 @@
 ﻿function index(req, res) {
-    res.render('index', { title: 'Home', year: new Date().getFullYear() });
+    res.render('index', {
+        title: 'Home', year: new Date().getFullYear()
+    });
 }
 exports.index = index;
 ;

@@ -5,50 +5,52 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>@model.title - Netricity.co.uk</title>
 	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="/stylesheets/dropit.css">
-	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
-	<script src="/javascripts/modernizr-2.6.2.js"></script>
-	<!--<script src="/javascripts/jquery-2.1.4.min.js"></script>-->
+	<link rel="stylesheet" type="text/css" href="/fancybox/jquery.fancybox-v=2.1.5.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/munter.css">
+	
+	<!--<script src="/javascripts/modernizr-2.6.2.js"></script>-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<script src="/javascripts/dropit.js"></script>
+	<script src="/javascripts/munter.js"></script>
 </head>
 <body>
-	<div class="navbar navbar-inverse navbar-fixed-top">
+
+	<div class="navbar navbar-fixed-top" data-activeslide="@model.slideNum">
 		<div class="container">
-			<div class="navbar-header">
-				<button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-				<a href="/" class="navbar-brand">Netricity</a>
-			</div>
-			<div class="navbar-collapse collapse menu">
-				<ul class="nav navbar-nav">
-					<li><a href="/">Home</a></li>
-					<li><a href="/about">About</a>
-						<ul>
-							<li><a href="foo">Foo</a></li>
-							<li><a href="bar">Bar</a></li>
-						</ul>
-					</li>
-					<li><a href="/contact">Contact</a></li>
+		
+			<!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			
+			<div class="nav-collapse collapse navbar-responsive-collapse">
+				<ul class="nav row">
+					<li data-slide="1" class="col-12 col-sm-2 @(model.slideNum == 1 ? 'active' : '')"><a id="menu-link-1" href="#slide-1" title="Next Section"><span class="icon icon-home"></span> <span class="text">HOME</span></a></li>
+					<li data-slide="2" class="col-12 col-sm-2 @(model.slideNum == 2 ? 'active' : '')"><a id="menu-link-2" href="#slide-2" title="Next Section"><span class="icon icon-user"></span> <span class="text">ABOUT US</span></a></li>
+					<li data-slide="3" class="col-12 col-sm-2 @(model.slideNum == 3 ? 'active' : '')"><a id="menu-link-3" href="#slide-3" title="Next Section"><span class="icon icon-briefcase"></span> <span class="text">PORTFOLIO</span></a></li>
+					<li data-slide="4" class="col-12 col-sm-2 @(model.slideNum == 4 ? 'active' : '')"><a id="menu-link-4" href="#slide-4" title="Next Section"><span class="icon icon-gears"></span> <span class="text">PROCESS</span></a></li>
+					<li data-slide="5" class="col-12 col-sm-2 @(model.slideNum == 5 ? 'active' : '')"><a id="menu-link-5" href="#slide-5" title="Next Section"><span class="icon icon-heart"></span> <span class="text">CLIENTS</span></a></li>
+					<li data-slide="6" class="col-12 col-sm-2 @(model.slideNum == 6 ? 'active' : '')"><a id="menu-link-6" href="#slide-6" title="Next Section"><span class="icon icon-envelope"></span> <span class="text">CONTACT</span></a></li>
 				</ul>
-			</div>
-		</div>
+				<div class="row">
+					<div class="col-sm-2 active-menu" style="display:none"></div>
+				</div>
+			</div><!-- /.nav-collapse -->
+		</div><!-- /.container -->
+	</div><!-- /.navbar -->
+
+	<!-- === Arrows === -->
+	<div id="arrows">
+		<div id="arrow-up" class="disabled"></div>
+		<div id="arrow-down"></div>
+		<div id="arrow-left" class="disabled visible-lg"></div>
+		<div id="arrow-right" class="disabled visible-lg"></div>
 	</div>
-	<div class="container body-content">
-		@html.block('content')
+	<!-- /.arrows -->
 
-		<hr />
-		<footer>
-			<p>&copy; @(new Date().getFullYear()) - Netricity Ltd</p>
-		</footer>
-	</div>
+	@html.block('content')
 
-	<script src="/javascripts/bootstrap.js"></script>
-	<script src="/javascripts/respond.js"></script>
-
-	<script>
-		$(document).ready(function () {
-			$('.navbar-nav').dropit({ action: 'mouseenter' });
-		});
-	</script>
 </body>
 </html>

@@ -1,26 +1,24 @@
 ﻿@html.extend('layout', function(model){
     @html.block('content', function(model){
-		<div class="jumbotron">
-			<h1>Express</h1>
-			<p class="lead">Express is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-			<p><a href="http://expressjs.com/" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-		</div>
-		<div class="row">
-			<div class="col-md-4">
-				<h2>Getting started</h2>
-				<p>Express gives you a powerful, patterns-based way to build dynamic websites that enables a clean separation of concerns and gives you full control over markup for enjoyable, agile development.</p>
-				<p><a href="http://expressjs.com/" class="btn btn-default">Learn more &raquo;</a></p>
+	
+	model.slideNum = "1"
+
+	<div class="slide story" id="slide-1" data-slide="1">
+		<div class="container">
+			<div id="home-row-1" class="row clearfix">
+				<div class="col-12">
+					<h1 class="font-semibold">MUNTER <span class="font-thin">DESIGN</span></h1>
+					<h4 class="font-thin">We are an <span class="font-semibold">independent interactive agency</span> based in London.</h4>
+					<br>
+					<br>
+				</div>
 			</div>
-			<div class="col-md-4">
-				<h2>Get more libraries</h2>
-				<p>Node Packaged Modules is a repository of software for Node.js.</p>
-				<p><a href="https://www.npmjs.org/" class="btn btn-default">Learn more &raquo;</a></p>
-			</div>
-			<div class="col-md-4">
-				<h2>Microsoft Azure</h2>
-				<p>You can easily publish to Microsoft Azure using Node.js Tools for Visual Studio. Find out how you can host your application using a free trial today.</p>
-				<p><a href="http://azure.microsoft.com" class="btn btn-default">Learn more &raquo;</a></p>
+			<div id="home-row-2" class="row clearfix">
+				<div class="col-12 col-sm-4"><div class="home-hover navigation-slide" data-slide="4"><img src="images/s02.png"></div><span>PROFESSIONAL</span></div>
+				<div class="col-12 col-sm-4"><div class="home-hover navigation-slide" data-slide="3"><img src="images/s01.png"></div><span>FRIENDLY</span></div>
+				<div class="col-12 col-sm-4"><div class="home-hover navigation-slide" data-slide="5"><img src="images/s03.png"></div><span>SUITABLE</span></div>
 			</div>
 		</div>
+	</div>
     })
 })

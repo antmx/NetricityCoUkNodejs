@@ -4,7 +4,10 @@
 import express = require('express');
 
 export function index(req: express.Request, res: express.Response) {
-    res.render('index', { title: 'Home', year: new Date().getFullYear() });
+    res.render(
+        'index',
+        { title: 'Home', year: new Date().getFullYear()
+    });
 };
 
 export function about(req: express.Request, res: express.Response) {
