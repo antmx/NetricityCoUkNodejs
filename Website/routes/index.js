@@ -17,4 +17,10 @@ function contact(req, res) {
 }
 exports.contact = contact;
 ;
+
+function portfolio(req, res) {
+    res.render('portfolio', { title: 'Portfolio', year: new Date().getFullYear(), message: 'Your portfolio page.' });
+}
+exports.portfolio = portfolio;
+;
 //# sourceMappingURL=index.js.map

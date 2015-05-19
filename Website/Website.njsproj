@@ -374,6 +374,7 @@
     <Content Include="views\contact.vash" />
     <Content Include="views\index.vash" />
     <Content Include="views\layout.vash" />
+    <Content Include="views\portfolio.vash" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="custommodules\" />
@@ -627,6 +628,8 @@
       <SubType>Code</SubType>
       <TestFramework>ExportRunner</TestFramework>
     </Compile>
+    <Compile Include="public\javascripts\html5shiv.js" />
+    <Compile Include="public\javascripts\jquery.easing.1.3.js" />
     <Compile Include="public\javascripts\munter.js" />
     <Compile Include="public\LinkSpector\app\app.js" />
     <Compile Include="public\LinkSpector\app\controllers\resourceLogController.js" />

@@ -248,6 +248,29 @@ jQuery(document).ready(function ($) {
 	);
 });
 
+/***************
+* = Menu highlight *
+***************/
+jQuery(document).ready(function ($) {
+
+	var item = $(".nav .active");
+
+	//var icon = $(this).find('.icon');
+	var icon = item.find('.icon');
+	
+	var left_pos = icon.offset().left - $('.nav').offset().left;
+	//var el_width = icon.width() + $(this).find('.text').width() + 10;
+	var el_width = icon.width() + item.find('.text').width() + 10;
+	
+	var hover_bar = $('<div class="active-menu special-active-menu"></div>')
+				.css('left', left_pos)
+				.css('width', el_width)
+				//.attr('id', 'special-active-menu-' + $(this).data('slide'));
+				.attr('id', 'special-active-menu-' + item.data('slide'));
+	
+	$('.active-menu').after(hover_bar);
+});
+
 /******************
 * = Gallery hover *
 ******************/
